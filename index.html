@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Where am I?</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Caveat&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body onclick="var audio=new Audio('tap.wav');audio.loop=false;audio.play();" onload='die();'>
+
+<div class='textBox' style='display:block;' id='start' >
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>Hello! Welcome to <i>Where am I?</i>. If you can't tell, this is a choose-your-own-adventure game. Though, it is also very early in develoment, and things are guaranteed to change.</p>
+<p>Are you ready to start? (Press the button when ready)</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play(); var audio=new Audio('music.wav');audio.loop=true;audio.play();">
+<p class='cchoices' onclick="document.getElementById('start').style.display='none'; document.getElementById('a').style.display='block';">I'm ready!</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='a'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You awake on the forest floor.</p>
+<p>Trees surround you in all directions—although one side is less thick, and you can easily see a hilly meadow through the gaps in the trees.</p>
+<p>You notice that the side of your head hurts. Instinctively touching it, you feel a large bloody scab.</p>
+<p>You have a hard time remembering anything, especially how you got here, but. . . .</p>
+<p>The last thing you remember was that you were going to die. Had it all been a dream?</p>
+<p>Figuring that you should probably do something, you push yourself up from the ground.</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('a').style.display='none'; document.getElementById('b').style.display='block'; rhealth();">Go deeper into the forest</p>
+<p class='cchoices' onclick="document.getElementById('a').style.display='none'; document.getElementById('c').style.display='block';">Go into the meadow</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='b'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You go deeper into the forest, though it turns out that it was little more than a small patch of trees, so you head back. 
+<p>But while you were exploring, you tripped and stumbled on a plant and hurt yourself. -10 Health</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('b').style.display='none'; document.getElementById('a').style.display='block';">Head back</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='c'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You walk out from the forest and into the meadow. It's full of beautiful flowers, though you can't seem to identify any of them.</p>
+<p>Over the hill, you see smoke drifting up through the air like a gentle stream.</p>
+<p>That could mean that there's people there.</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('c').style.display='none'; document.getElementById('e').style.display='block';">Follow the smoke</p>
+<p class='cchoices' onclick="document.getElementById('c').style.display='none'; document.getElementById('d').style.display='block';">Go in the opposite direction</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='d'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You wandered elsewhere. Along the way, you get lost, and die of starvation. Your body is eaten by penumbra cats.</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="window.location.reload();">Reset</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='e'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You climb up the hill. At the top, a small but bustling village was built. It was centered around a lake, and the houses were made from planks—or logs—and stone bricks, supported by log frames.</p>
+<p>A few children played about, and a man stood nearby, watching them.</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('e').style.display='none'; document.getElementById('f').style.display='block';">Greet the man</p>
+<p class='cchoices' onclick="document.getElementById('e').style.display='none'; document.getElementById('g').style.display='block';">Go to the shop</p>
+<p class='cchoices' onclick="document.getElementById('e').style.display='none'; document.getElementById('h').style.display='block';">Enð thə çhilð</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='g'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You the enter the shop, which is shopkept by a stout old woman. [tap on the thing you want to buy]</p>
+<p onclick="r3ster();" class='handwritten'>Sword: costs 3 sterllo</p>
+<p onclick="buyBread()" class='handwritten'>Bread: costs 2 sterllo and 1 dollundar</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('g').style.display='none'; document.getElementById('e').style.display='block';">Back</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='lowmon'>
+<center><p style="font-family:'Aboreto', cursive;">The shopkeeper</p></center>
+<div class="aSeparator"></div>
+<p>"I am sorry, but you don't have enough."</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('lowmon').style.display='none'; document.getElementById('g').style.display='block';">OK</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='f'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>You walk up to the man and greet him, introducing yourself. The man seems to speak in a transatlantic accent.</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('f').style.display='none'; document.getElementById('j').style.display='block';">Shop</p>
+	<p class='cchoices' onclick="document.getElementById('f').style.display='none'; document.getElementById('k').style.display='block';">Where are we?</p>
+		<p class='cchoices' onclick="document.getElementById('f').style.display='none'; document.getElementById('e').style.display='block';">Bye</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='j'>
+<center><p style="font-family:'Aboreto', cursive;">The man</p></center>
+<div class="aSeparator"></div>
+<p>"Sorry, but I'm not selling anything at the moment."</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('j').style.display='none'; document.getElementById('f').style.display='block';">OK</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='k'>
+<center><p style="font-family:'Aboreto', cursive;">The man</p></center>
+<div class="aSeparator"></div>
+<p>"You're in Wilhelm Hill, a village in the eastern part of Engiman."</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('k').style.display='none'; document.getElementById('f').style.display='block';">OK</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='h'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>Driven by some unseen force, you launch yourself at a child, swinging at their head as hard as you can.</p>
+<p>There was a sickening crack, and the child fell to the ground limply.</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="document.getElementById('h').style.display='none'; document.getElementById('d').style.display='block';">Run away</p>
+<p class='cchoices' onclick="document.getElementById('h').style.display='none'; document.getElementById('i').style.display='block';">Try and talk to the man</p>
+</div>
+</div>
+
+<div class='textBox' style='display:none;' id='i'>
+<center><p style="font-family:'Aboreto', cursive;">Game</p></center>
+<div class="aSeparator"></div>
+<p>Unsurprisingly, he strangles you before you can do anything.</p>
+<p>As the world fades to black, you know that you should have acted smarter. . . .</p>
+<div class='choices' onclick="var audio=new Audio('page-turn.wav');audio.loop=false;audio.play();">
+<p class='cchoices' onclick="window.location.reload();">Reset</p>
+</div>
+</div>
+
+<div class='stats'>
+<p>Health: <a id='health'>50</a></p>
+<p>Score: <a id='score'>0</a></p>
+<p>Pesokt: <a id='pes'>20</a></p>
+<p>Dollundar: <a id='dol'>5</a></p>
+<p>Sterllo: <a id='ster'>5</a></p>
+</div>
+
+</body>
+</html>
